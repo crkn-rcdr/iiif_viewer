@@ -13,13 +13,11 @@ export default class extends Controller {
         embedded: true // needed for codesandbox frame,
       };
       data.canvasIndex = canvasIndex
-      document.getElementById("uv").style = "height: 40rem;";
-      let viewer = UV.init("uv", data);
+      let viewer = UV.init("page-viewer", data);
     } else {
       //https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
-      document.getElementById("mirador").style = "width: 100%; height: 40rem; position: relative;";
       let miradorInstance = Mirador.viewer({
-        id: 'mirador', // id selector where Mirador should be instantiated
+        id: 'page-viewer', // id selector where Mirador should be instantiated
         //selectedTheme: 'dark', // dark also available
         view: "catalogueView",
         window: {
