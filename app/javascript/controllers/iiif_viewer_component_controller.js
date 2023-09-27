@@ -22,6 +22,8 @@ export default class extends Controller {
         view: "catalogueView",
         window: {
             allowClose: false, // Prevent the user from closing this window
+            allowFullscreen: true,
+            allowMaximize: false,
             defaultSideBarPanel: 'info',
             sideBarOpenByDefault: true,
             defaultView: 'book',
