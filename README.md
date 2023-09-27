@@ -3,7 +3,6 @@ Short description and motivation.
 
 ## Usage
 How to use my plugin.
-rails iiif_viewer:cpfiles
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -20,6 +19,11 @@ $ bundle
 Or install it yourself as:
 ```bash
 $ gem install iiif_viewer
+```
+
+Then, run the rake file that will add the required Javascript to your project.
+```
+rails iiif_viewer:cpfiles
 ```
 
 ## Contributing
