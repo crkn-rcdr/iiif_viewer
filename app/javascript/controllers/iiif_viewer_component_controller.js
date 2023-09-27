@@ -13,8 +13,10 @@ export default class extends Controller {
         embedded: true // needed for codesandbox frame,
       };
       data.canvasIndex = canvasIndex
+      document.getElementById("viewer-name").innerHTML = "Universal Viewer."
       let viewer = UV.init("page-viewer", data);
     } else {
+      document.getElementById("viewer-name").innerHTML = "Mirador."
       //https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
       let miradorInstance = Mirador.viewer({
         id: 'page-viewer', // id selector where Mirador should be instantiated
