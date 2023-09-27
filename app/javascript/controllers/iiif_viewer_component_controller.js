@@ -7,6 +7,7 @@ export default class extends Controller {
     const params = new URLSearchParams(window.location.search)
     if(params.has("pageNum")) canvasIndex = parseInt(params.get("pageNum")-1)
     if(Math.random() < 0.5) {
+      //https://codesandbox.io/s/uv-config-example-7kh4s?file=/uv-config.json
       const data = {
         manifest: "https://www.canadiana.ca/iiif/"+documentId+"/manifest",
         embedded: true // needed for codesandbox frame,
@@ -15,6 +16,7 @@ export default class extends Controller {
       document.getElementById("uv").style = "height: 40rem;";
       let viewer = UV.init("uv", data);
     } else {
+      //https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
       document.getElementById("mirador").style = "width: 100%; height: 40rem; position: relative;";
       let miradorInstance = Mirador.viewer({
         id: 'mirador', // id selector where Mirador should be instantiated
@@ -24,7 +26,7 @@ export default class extends Controller {
             allowClose: false, // Prevent the user from closing this window
             defaultSideBarPanel: 'info',
             sideBarOpenByDefault: true,
-            defaultView: 'single',
+            defaultView: 'book',
             views: [ // Only allow the user to select single and gallery view
               { key: 'single', behaviors: ['individuals', 'paged'] },
               { key: 'book', behaviors: ['paged'] },
